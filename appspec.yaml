@@ -1,0 +1,10 @@
+version: 1.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-east-2:598598421932:task-definition/currency-exchange-task:1"
+        LoadBalancerInfo:
+          ContainerName: "currency-exchange-container"
+          ContainerPort: "8000"
+        PlatformVersion: "LATEST"
